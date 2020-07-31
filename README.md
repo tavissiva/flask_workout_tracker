@@ -69,4 +69,17 @@ Run the final project , after all this successful steps
 
 ![Login](showResult/addworkout4.JPG)
 
+#Resources & References
+
+*   Project Idea
+    *   https://www.youtube.com/playlist?list=PLXmMXHVSvS-BV057PQaOJLnQ4Zp9McdRP
+
+*   Flask Sqlalchemy
+    *  https://flask-sqlalchemy.palletsprojects.com/en/2.x/quickstart/   
+
+*   Flask Migrate
+    *   https://flask-migrate.readthedocs.io/en/latest/
+       
+*   Stackoverflow
+    *   https://stackoverflow.com/
 
