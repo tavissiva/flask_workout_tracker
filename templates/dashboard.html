@@ -1,0 +1,57 @@
+{% extends "layout.html" %}
+
+{% block link%}
+<style>
+    .container{
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Ranchers', cursive;
+
+    }
+    .workouts{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: blue;
+        color: white;
+        margin-bottom: 10px;
+        line-height: 1px;
+        border-radius: 5px;
+        box-shadow: 1px 0px 2px rgba(0, 0, 0, 0.5);
+        width: 40%;
+    }
+</style>
+{% endblock%}
+
+{% block body %}
+<code > logged in as <strong style="color: blue; text-transform: capitalize;">{{user }}</strong></code>
+<br><br>
+<a href="/logout">Logout</a>
+<br>
+<a href="{{ url_for('add_workout')}}">Add_Workout</a>
+
+<div class="container">
+    
+    <h1>Workout History</h1>
+    {% for workout in workouts %}
+
+        <div class="workouts">
+            <p>Date: {{ workout.date }}</p>
+            {% set exercises = workout.exercise.all() %}
+            {% for exercise in exercises %}
+                <p>Exercise: {{ exercise.exercises.name }}</p>
+                {% set sets=exercise.sets.all() %}
+                
+                {% for seT in sets %}
+                    <p>Weight: {{ seT.weight}}</p>
+                    <p>Reps: {{ seT.reps}}</p>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    {% endfor%}
+</div>
+{% endblock %}

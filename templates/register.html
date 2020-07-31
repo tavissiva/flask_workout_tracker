@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+
+{% block link%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+{% endblock%}
+
+{% block body %}
+    <div class="container">
+        <form action="{{ url_for('register') }}" method="post" class="login-form">
+            {% if error_flag %}
+            <p class="error-box">{{error_flag}}</p>
+            {% endif %}
+
+            <label for="username">Username</label>
+            <input class="username-input" type="text" name="username" placeholder="Username" >
+            <label for="password">Password</label>
+            <input type="password" class="password-input" name="password" placeholder="Password">
+            <label for="password">Confirm Password</label>
+            <input type="password" class="password-input" name="confirm-password" placeholder="Confirm Password">
+            <button type="submit">Register</button>
+            <a href="/login">Login</a>
+        </form>
+    </div>
+
+{% endblock %}

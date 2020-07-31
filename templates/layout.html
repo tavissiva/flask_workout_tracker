@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Workout Tracker</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css')}}"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&family=Montserrat&family=Ranchers&display=swap" 
+        rel="stylesheet"
+    >
+    {% block link%}{% endblock %}
+</head>
+<body>
+    
+    {% block body%}{% endblock %}
+
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.10.2/underscore-min.js"></script>
+    <script src="{{ url_for('static', filename='js/workout.js')}}"></script>
+</body>
+</html>

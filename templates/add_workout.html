@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block link%}
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/login.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/add_workout.css')}}">
+{% endblock%}
+
+{% block body %}
+<a href="/">Home</a>
+    <div class="container">
+
+        <form action="{{ url_for('add_workout') }}" method="post" class="login-form">
+            {% if error_flag %}
+            <p class="error-box">{{error_flag}}</p>
+            {% endif %}
+            
+            <!-- exercises1 -->
+            <label id="select-label1">Exercise</label>
+            <select name="exercises-select1" id="exercises-select1">
+                {% for exercise in exercises%}
+                    <option value="{{ exercise.id }}">{{exercise.name}}</option>
+                {% endfor %}
+            </select>
+            <div class="exercise-set" id="exercise-set1">
+                <label>Weight</label>
+                <input  type="text" name="weight1" placeholder="weight" >
+                <label >Reps</label>
+                <input type="text"  name="rep1" placeholder="rep">
+            </div>
+            <div class="added-btn-div" id="added-btn-div">
+                <div class="btn2" id="btn2">
+                    <button type="button" id="add-sets" exerciseno="1" onclick=addSets(this)>Add Sets</button>
+                </div>
+                <div class="btn1" id="btn1">
+                    <button type="button" id="add-exercise">Add Exercise</button>
+                </div>
+            </div>
+            <input type="hidden" name="exercise-count" value="1">
+            <button type="submit" id="submit">Add Workout</button>
+        </form>
+    </div>
+
+
+    <!-- Underscore template rendering -->
+    <script type="text/html" id="exercise-template">
+
+        <label id="select-label<%= exercise_num %>">Exercise</label>
+        <select name="exercises-select<%= exercise_num %>" id="exercises-select<%= exercise_num %>">
+            {% for exercise in exercises%}
+                <option value="{{ exercise.id }}">{{exercise.name}}</option>
+            {% endfor %}
+        </select>
+        <div class="exercise-set" id="exercise-set<%= exercise_num %>">
+        </div>
+        <div class="btn2-sets<%=exercise_num%>" id="btn2-sets<%=exercise_num%>">
+            <div>
+                <button type="button" id="add-sets" exerciseno="<%=exercise_num%>" onclick=addSets(this)>Add Sets</button>
+            </div>
+        </div>
+    </script>
+
+    <script type="text/html" id="set-template-id">
+        <label >Weight</label>
+        <input type="text" name="weight<%= exercise_num %>" placeholder="weight" >
+        <label >Reps</label>
+        <input type="text" name="rep<%= exercise_num %>" placeholder="rep">
+
+    </script>
+
+{% endblock %}

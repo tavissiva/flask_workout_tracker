@@ -1,0 +1,97 @@
+
+#select-label{
+    margin: 5px;
+    font-size: 16px;
+}
+select{
+    padding: 5px;
+    width: 100%;
+    border: 1px solid #cccccc;
+    margin-top: 0px !important;
+    border-radius: 3px;
+}
+select:hover{
+    outline: none;
+    border: 1px solid blue;
+}
+
+.exercise-set{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.exercise-set > label{
+    margin: 5px;
+    font-size: 16px;
+}
+
+.login-form{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+}
+.login-form input{
+    outline: none;
+    border: none;
+    border: 1px solid #cccccc;
+    border-radius: 3px;
+}
+.login-form input:hover, select:hover{
+    box-shadow: 0px 0px 2px blue;
+}
+.login-form button{
+    font-family: 'Ranchers', cursive;
+    background-color: mediumspringgreen;
+    border-color: mediumspringgreen;
+    color: white;
+    border-radius: 3px;
+}
+.login-form button:hover{
+    background-color: rgb(0, 241, 149);
+    border-color: rgb(0, 241, 149);
+    box-shadow: none;
+    color: darkslateblue;
+}
+
+.added-btn-div{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+#add-exercise, #add-sets{
+    outline: none;
+    border-color: #2e2eff;
+    background-color: #2e2eff;
+    color: white;
+    width: max-content;
+    border-radius: 3px;
+    padding: 5px;
+    font-family: 'Kanit', sans-serif;
+}
+#add-exercise:hover, #add-sets:hover{
+    background-color: #1818f8;
+    color: rgb(236, 236, 236);
+}
+
+@media only screen and (max-width: 400px)  {
+    .login-form{
+        width: 85%;
+    }
+}
+
+
+@media only screen and (max-width: 400px)  {
+    .login-form{
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 245px)  {
+    .added-btn-div{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
