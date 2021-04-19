@@ -1,5 +1,5 @@
 # Flask Workout tracker 
-  This is a Flask website which track the User workout, exericse schedule.
+  This is a Flask website which track the User workout, exercise.
   The LoggedIn user add their workout and then check their track history in dashboard.
   
 ### Tags
