@@ -7,6 +7,7 @@
   * `Html`
   * `CSS`
   * `JavaScript`
+  * `Flask_Sqlalchemy`
 
 
 ### Start App
